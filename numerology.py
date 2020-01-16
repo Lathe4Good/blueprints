@@ -1,5 +1,46 @@
-new = ""
-end = 0
+import re
+
+set1 = ['A', 'J', 'S']
+set2 = ['B', 'K', 'T']
+set3 = ['C', 'L','U']
+set4 = ['D', 'M',  'V']
+set5 = ['E', 'N', 'W']
+set6 = ['F', 'O', 'X']
+set7 = ['G', 'P', 'Y']
+set8 = ['H', 'Q', 'Z']
+set9 = ['I', 'R']
+
+
+def yes():
+	x = 0
+	for each in y:
+		each = each.upper()
+		if each in set1:
+			x += 1
+		elif each in set2:
+			x += 2
+		elif each in set3:
+			x += 3
+		elif each in set4:
+			x += 4
+		elif each in set5:
+			x += 5
+		elif each in set6:
+			x += 6
+		elif each in set7:
+			x += 7
+		elif each in set8:
+			x += 8
+		elif each in set9:
+			x += 9
+
+	def check():
+		if (x == "11") or (x == "22"):
+			print("11 or 22 detected.")
+		else:
+			length(x)
+
+	length(x)
 
 
 
@@ -48,15 +89,17 @@ def length(x):
 	else:
 		print(x)
 
-y = input("Please type a number: ")
 
-def check():
-	if (y == "11") or (y == "22"):
-		print("11 or 22 detected.")
-	else:
-		length(y)
 
-check()
+question = input("Would you like to enter a name? ")
+if re.match('^Y', question, re.IGNORECASE):
+	y = input("Enter name: ")
+	yes()
+elif re.match('^N', question, re.IGNORECASE):
+	n = input("Enter number: ")
+	length(n)
+else:
+	quit()
 
 #Make it less hard coded so it'll work beyond numbers of >3 digits?
 #Possibly add in numerology info if it interests you
